@@ -24,19 +24,19 @@ def assignmentScraper(seconds):
         #This grabs the specific tag 'li' in this content class
         for assignemnts in soup.find('div',{'class':"content"}).findAll('li'):
             toDo = assignemnts.get_text()
-    
+        mostRecentAssignment = toDo
         if currentModification != lastModified:
             #this updates current mod and then notifies user
             currentModification = lastModified
-            sendEmailWithText('email')  
+            sendEmailWithText('email', mostRecentAssignment)  
         time.sleep(seconds)
 
 #Add Add the email you want to send to
-def sendEmailWithText(to):
+def sendEmailWithText(to, assignmentToDo):
     
     
     msg = MIMEMultipart()
-    content = MIMEText("A New Assignment Has Been Posted: " + toDo )
+    content = MIMEText("A New Assignment Has Been Posted: " + assignmentToDo )
     msg.attach(content)
     
     
