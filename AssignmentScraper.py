@@ -28,10 +28,11 @@ def assignmentScraper(seconds):
         if currentModification != lastModified:
             #this updates current mod and then notifies user
             currentModification = lastModified
-            sendEmailWithText('email', mostRecentAssignment)  
-        time.sleep(seconds)
+            sendEmailWithText('email', mostRecentAssignment) 
+        else:
+            time.sleep(seconds)
 
-#Add Add the email you want to send to
+#Add whose email you wish to send to and information pulled
 def sendEmailWithText(to, assignmentToDo):
     
     
