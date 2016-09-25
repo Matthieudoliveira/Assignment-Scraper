@@ -15,7 +15,8 @@ def assignmentScraper(seconds):
         #This section is an HTTP Request to see if website has changed
         response = requests.get('url')
         lastModified = response.headers["Last-Modified"]
-        currentModification = 'Tue, 20 Sep 2016 23:26:34 GMT'
+        # Before running,re-get the "last-modified" and use that in currentModification 
+        currentModification = 'Tue, 20 Sep 2016 23:26:34 GMT' 
     
         #This Grabs URL and runs through the Beautiful Soup API
         html = urlopen('url').read()
