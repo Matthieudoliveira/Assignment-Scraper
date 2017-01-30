@@ -35,12 +35,9 @@ def assignmentScraper(seconds):
 
 #Add whose email you wish to send to and information pulled
 def sendEmailWithText(to, assignmentToDo):
-    
-    
     msg = MIMEMultipart()
     content = MIMEText("A New Assignment Has Been Posted: " + assignmentToDo )
     msg.attach(content)
-    
     
     mail = smtplib.SMTP('smtp.gmail.com',587)
     mail.ehlo()
